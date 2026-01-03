@@ -3,7 +3,11 @@
   "displayName": "Arrow Inserter",
   "description": "Quickly insert Unicode and ASCII arrow symbols via QuickPick menu",
   "version": "0.0.1",
-  "publisher": "ihazar",
+  "publisher": "HazarAbas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ihazar/vscode-arrow-inserter.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -60,7 +64,7 @@
     "vscode:prepublish": "npm run build",
     "build": "tsc -p .",
     "watch": "tsc -w -p .",
-    "package": "vsce package && mkdir -p artifacts && mv *.vsix artifacts/ 2>/dev/null || true",
+    "package": "mkdir -p output && vsce package --out output/",
     "compile": "npm run build",
     "lint": "echo 'add your linter here'"
   },
