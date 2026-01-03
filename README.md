@@ -165,6 +165,34 @@ To test in development:
 2. Press `F5` to launch Extension Development Host
 3. Test the extension in the new window
 
+### Creating a VSIX File
+
+To create a `.vsix` file for local installation or sharing:
+
+1. **Build the extension** (if not already built):
+   ```bash
+   npm run build
+   ```
+
+2. **Package the extension**:
+   ```bash
+   npm run package
+   ```
+
+   This will:
+   - Automatically run the build process
+   - Package all necessary files into a `.vsix` file
+   - Create the file in the `artifacts/` directory (e.g., `artifacts/vscode-arrow-inserter-0.0.1.vsix`)
+
+3. **Install the VSIX file**:
+   - Open VS Code/Cursor
+   - Go to Extensions view (`Cmd+Shift+X` / `Ctrl+Shift+X`)
+   - Click the `...` menu (top right)
+   - Select "Install from VSIX..."
+   - Choose the generated `.vsix` file from the `artifacts/` directory
+
+The `.vsix` file can be shared with others or used for local installation without going through the marketplace.
+
 ## Contributing
 
 Contributions are welcome! Feel free to submit issues or pull requests.

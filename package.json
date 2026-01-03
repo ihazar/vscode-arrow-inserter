@@ -10,6 +10,11 @@
   "categories": [
     "Other"
   ],
+  "activationEvents": [
+    "onCommand:arrows.insertSymbol",
+    "onCommand:arrows.insertSymbolSpaced",
+    "onCommand:arrows.insertAscii"
+  ],
   "contributes": {
     "commands": [
       {
@@ -55,7 +60,7 @@
     "vscode:prepublish": "npm run build",
     "build": "tsc -p .",
     "watch": "tsc -w -p .",
-    "package": "vsce package",
+    "package": "vsce package && mkdir -p artifacts && mv *.vsix artifacts/ 2>/dev/null || true",
     "compile": "npm run build",
     "lint": "echo 'add your linter here'"
   },
