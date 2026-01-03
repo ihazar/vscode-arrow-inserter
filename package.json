@@ -1,0 +1,67 @@
+{
+  "name": "vscode-arrow-inserter",
+  "displayName": "Arrow Inserter",
+  "description": "Quickly insert Unicode and ASCII arrow symbols via QuickPick menu",
+  "version": "0.0.1",
+  "publisher": "ihazar",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "arrows.insertSymbol",
+        "title": "Arrows: Insert Unicode Arrow"
+      },
+      {
+        "command": "arrows.insertSymbolSpaced",
+        "title": "Arrows: Insert Unicode Arrow (with spaces)"
+      },
+      {
+        "command": "arrows.insertAscii",
+        "title": "Arrows: Insert ASCII Arrow"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "arrows.insertSymbol",
+        "key": "ctrl+alt+;",
+        "mac": "cmd+alt+;",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Arrow Inserter",
+      "properties": {
+        "arrows.customSymbols": {
+          "type": "array",
+          "default": [],
+          "markdownDescription": "Add custom symbols to the picker. Each item is an object: { \"label\": \"Right fat arrow\", \"text\": \"➡️\", \"detail\": \"U+27A1\" }."
+        },
+        "arrows.showCodePoints": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show Unicode code points (e.g., U+2192) in the picker detail."
+        }
+      }
+    }
+  },
+  "main": "./dist/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "package": "vsce package",
+    "compile": "npm run build",
+    "lint": "echo 'add your linter here'"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.6.3",
+    "vsce": "^2.15.0"
+  }
+}
